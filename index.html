@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DocuMate - Digital Document Organizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2>Docu<span>Mate</span></h2>
+
+        <nav>
+            <a href="#" class="active" id="dashboardLink">Dashboard</a>
+            <a href="#documents">My Documents</a>
+            <a href="#documents">Categories</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Digital Document Organizer</p>
+            <small>Manage your files easily</small>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome to your personal document organizer.</p>
+            </div>
+
+            <button class="upload-btn" id="openUploadBtn">
+                + Upload Document
+            </button>
+
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Total Documents</h3>
+                <p id="totalDocuments">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>PDF Documents</h3>
+                <p id="pdfDocuments">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Images</h3>
+                <p id="imageDocuments">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Other Files</h3>
+                <p id="otherDocuments">0</p>
+            </div>
+
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search documents by name..."
+            >
+
+            <select id="categoryFilter">
+
+                <option value="All">All Categories</option>
+                <option value="Education">Education</option>
+                <option value="Personal">Personal</option>
+                <option value="Business">Business</option>
+                <option value="Finance">Finance</option>
+                <option value="Others">Others</option>
+
+            </select>
+
+        </section>
+
+        <!-- Documents -->
+        <section class="documents-section" id="documents">
+
+            <div class="section-heading">
+                <h2>My Documents</h2>
+                <span id="documentCount">0 documents</span>
+            </div>
+
+            <div class="document-container" id="documentContainer">
+
+                <div class="empty-state">
+                    <h3>No Documents Yet</h3>
+                    <p>Your uploaded documents will appear here.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Upload Document</h2>
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    id="closeUploadBtn"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+            <form id="uploadForm">
+
+                <div class="form-group">
+
+                    <label for="documentName">
+                        Document Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="documentName"
+                        placeholder="Enter document name"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="documentCategory">
+                        Category
+                    </label>
+
+                    <select id="documentCategory" required>
+
+                        <option value="">Select Category</option>
+                        <option value="Education">Education</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Business">Business</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Others">Others</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="documentDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="documentDescription"
+                        placeholder="Enter document description"
+                        rows="3"
+                    ></textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="documentFile">
+                        Select Document
+                    </label>
+
+                    <input
+                        type="file"
+                        id="documentFile"
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                        required
+                    >
+
+                    <small>
+                        Supported formats: PDF, DOC, DOCX, JPG, PNG
+                    </small>
+
+                </div>
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelUploadBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                        id="submitUploadBtn"
+                    >
+                        Upload Document
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
